@@ -1,35 +1,75 @@
+[update-readmes]   Mode: rewrite — migrating to template structure...
 # waydroid-eOS
-eOS for Waydroid
 
-Current version is [v3.5-t](https://gitlab.e.foundation/e/os/android/-/tree/v3.5-t) (based on Lineage 20) 
-This following the [Instrctuions from the Waydroid Documentation]([red](https://docs.waydro.id/development/compile-waydroid-lineage-os-based-images#how-to-build))
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/waydroid-eOS)
 
-To use, follow [these instructions](https://docs.waydro.id/faq/using-custom-waydroid-images)
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-### Special thanks to
+## Architecture
 
-- SuperChicken666 for their guidance
-- Ronzz98 for their [build guide](https://community.e.foundation/t/ultimate-how-to-guide-unofficial-builds-using-repo-style-for-using-lineage-or-other-aosp-sources-that-are-not-supported-by-e-os/63908)
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-### Steps for Rebuilding
+## Install
+
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
 ```bash
-# Replace v3.5-t for your relevant version
-repo init -u https://gitlab.e.foundation/e/os/android.git -b v3.5-t --git-lfs
-repo sync build/make
-wget -O - https://raw.githubusercontent.com/waydroid/android_vendor_waydroid/lineage-20/manifest_scripts/generate-manifest.sh | bash
-
-# Remove or Comment out the <remove-project name="LineageOS/android_packages_apps_SetupWizard" /> line from .repo/local_manifests/01-removes.xml
-
-repo sync --force-sync -j8 #Or -j$(nproc --all) -- This take a while, I  did it overnight, or while I was away.
-
-. build/envsetup.sh # Do this in bash, if you aren't already.
-
-apply-waydroid-patches
-# Feel free to ignore the Vendor-add-more-build-types conflict.
-
-lunch # and select which build you want. Like lineage_waydroid_(arch)_variant
-
-# Finally Build.
-make systemimage -j$(nproc --all) # Took me 2hrs
-make vendorimage -j$(nproc --all) # Took me 1hr
+git clone https://github.com/Interested-Deving-1896/waydroid-eOS.git
+cd waydroid-eOS
 ```
+
+## Usage
+
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/waydroid-eOS`](https://github.com/Interested-Deving-1896/waydroid-eOS) and mirrored through:
+
+```
+Interested-Deving-1896/waydroid-eOS  ──►  OpenOS-Project-OSP/waydroid-eOS  ──►  OpenOS-Project-Ecosystem-OOC/waydroid-eOS
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
